@@ -1,0 +1,22 @@
+
+".container" : {
+  backgroundColor: "#ffffff",
+  height: Titanium.UI.FILL,
+  width: Titanium.UI.FILL,
+  layout: "vertical",
+},
+"#search_view" :{
+	height: Titanium.UI.SIZE,
+},
+"#searchView" :{
+	backgroundColor:"#ddd",
+	top: "20dp",
+	left: "20dp",
+	right: "20dp",
+	height: Titanium.UI.SIZE,
+},
+".reg_tvrow" :{
+	layout: "vertical",
+	height: Titanium.UI.SIZE,
+	width: Titanium.UI.FILL,
+}

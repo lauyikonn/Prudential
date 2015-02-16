@@ -1,0 +1,30 @@
+<Alloy>
+	<Window class="container" layout="vertical" fullscreen="true" navBarHidden="true">
+		<View class="header">
+			<View backgroundImage="/images/Prudential_apps_Logo.png" width="320" height="68"></View>
+		</View>
+		<ScrollView class="main" layout="vertical" height="Ti.UI.FILL" width="100%" contentHeight="auto">
+			<View class="menu_item" mod="new_policy" onClick="navigate">
+				<ImageView class="icon" mod="new_policy" width="50" image="/images/Icon01.png"></ImageView>
+				<Label mod="new_policy" class="large">NEW BUSINESS PROPOSAL</Label>
+			</View>
+			<View class="menu_item" mod="update_policy" onClick="navigate">
+				<ImageView class="icon" width="50" mod="update_policy" image="/images/Icon02.png"></ImageView>
+				<Label mod="update_policy" class="large">POLICY SERVICING</Label>
+			</View>
+			<View class="menu_item" mod="claims" onClick="navigate">
+				<ImageView class="icon" mod="claims" width="50" image="/images/Icon03.png"></ImageView>
+				<Label mod="claims" class="large">CLAIMS</Label>
+			</View>
+			<View class="menu_item" mod="history" onClick="navigate">
+				<ImageView class="icon" mod="history" width="50" image="/images/Icon04.png"></ImageView>
+				<Label mod="history" class="large">HISTORY</Label>
+			</View>
+			<!--
+			<View class="menu_item" onClick="clearDB">
+				<ImageView class="icon" width="50" image="/images/Icon04.png"></ImageView>
+				<Label class="large">CLEAR</Label>
+			</View>-->
+		</ScrollView>
+	</Window>
+</Alloy>

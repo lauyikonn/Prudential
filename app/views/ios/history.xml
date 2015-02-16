@@ -1,0 +1,28 @@
+<Alloy>
+	<Window class="container" fullscreen="true" navBarHidden="true">
+		<View layout="vertical" width="Ti.UI.FILL">
+			<View class="head">
+				<Label class="main_title">HISTORY</Label>
+				<View class="btn_back" onClick="nav_back">
+					<ImageView height="20dp" width="auto" left="10dp" right="15dp" top="15dp" image="/images/Left Arrow_white.png"></ImageView>
+				</View>
+			</View>
+			<ScrollView id="menu" >
+				<View id="lb0" mod="0" onTouchend="goSlide" backgroundColor="#ffffff" class="menuItem">
+	    			<Label class="menuItem_text" right="15" mod="0">NEW PROPOSAL</Label>
+	    		</View>
+	    		<View id="lb1" class="menuItem" mod="1" onTouchend="goSlide">
+	    			<Label class="menuItem_text" mod="1">POLICY SERVICING</Label>
+	    		</View>
+	    		<View id="lb2" class="menuItem" mod="2" onTouchend="goSlide">
+	    			<Label class="menuItem_text" right="15" mod="2">CLAIMS</Label>
+	    		</View>
+	    	</ScrollView>
+	        <ScrollableView id="scrollableView" backgroundColor="#ffffff" showPagingControl="false">
+	        	<Require src="history_new_policy"/>
+	        	<Require src="history_update_policy"/>
+	        	<Require src="history_claims"/>
+	        </ScrollableView>
+        </View>
+	</Window>
+</Alloy>

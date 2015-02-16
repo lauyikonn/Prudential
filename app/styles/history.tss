@@ -1,0 +1,16 @@
+"#menu":{
+	height: Ti.UI.SIZE,
+	backgroundColor: "#fff",
+	layout: 'horizontal',
+},
+".menuItem":{
+	backgroundColor: "#cccccc",
+	height: "64dp",
+	width: Titanium.UI.SIZE,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+},
+".menuItem_text":{
+	width: Titanium.UI.SIZE,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	color: "#000000",
+}

@@ -1,0 +1,5 @@
+".main_head":{
+	height: '50dp',
+	backgroundColor: "#68737A",
+	top: 0,
+}

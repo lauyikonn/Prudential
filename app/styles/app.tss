@@ -1,0 +1,88 @@
+
+"Label" :{
+	width: Ti.UI.FILL,
+	font: {
+		font: "Open Sans",
+		fontSize: "12dp",
+	}
+}
+
+"TextField":{
+	width: Ti.UI.FILL,
+	height: "50dp",
+	backgroundColor: "#F2F1EF",
+	top: "15dp",
+	left: "15dp",
+	right: "15dp",
+}
+".category_text":{
+	width: Ti.UI.FILL,
+	color: "#000000",
+	height: "50dp",
+	backgroundColor: "transparent",
+	top: "15dp",
+	left: "25dp",
+	right: "15dp",
+	zIndex: "10",
+}
+"Picker":{
+	width: Ti.UI.FILL,
+	color: "#000000",
+	height: "50dp",
+	backgroundColor: "#4D74B0",
+	top: "15dp",
+	left: "15dp",
+	right: "15dp",
+}
+
+".head":{
+	height: '50dp',
+	backgroundColor: "#EA2035",
+}
+
+".main_title":{
+	color: "#fff",
+	height: Ti.UI.SIZE,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	top: "10dp",
+	bottom: '10dp',
+	font: {
+		fontSize: "20dp"
+	}
+}
+
+".btn_back":{
+	height: '50dp',
+	width: Ti.UI.SIZE,
+	left: 0,
+	backgroundColor: "#000",
+}
+
+".main":{
+	backgroundColor: "#F2F1EF",
+}
+
+".body":{
+	top: "20dp",
+	left: "20dp",
+	right: "20dp",
+	height:  Ti.UI.SIZE,
+	backgroundColor: "#fff",
+}
+
+".content":{
+	top: "50dp",
+	height:  Ti.UI.SIZE,
+}
+
+"#loadingBar":{
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL,
+	zIndex: 100,
+}
+"#activityIndicator" : {
+	 //style: Ti.UI.ActivityIndicatorStyle.BIG,
+	 top:15,
+	 left:30,
+	 width:60,
+}

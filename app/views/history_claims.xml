@@ -1,0 +1,9 @@
+<Alloy>
+	<View class="container">
+		<!--<View id="search_view">
+			<SearchView id="searchView" ns="Ti.UI.Android" platform="android" hintText="Proposal Number" />
+	</View>-->
+		<TableView id="tableview" top="10" searchAsChild="false">
+	    </TableView>
+    </View>
+</Alloy>

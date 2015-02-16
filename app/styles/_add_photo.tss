@@ -1,0 +1,13 @@
+".main_head":{
+	height: '50dp',
+	backgroundColor: "#68737A",
+	top: 0,
+}
+
+".listing_item":{
+	backgroundColor:"#F2F1EF",
+	width:"31%",
+	height:"80dp",
+	left:"2%",
+	top: "5dp",
+}

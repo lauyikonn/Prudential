@@ -1,0 +1,53 @@
+".container": {
+	backgroundColor:"white"
+}
+
+"Label": {
+	width: Ti.UI.FILL,
+	color: "#000",
+	font: {
+		font: "Open Sans"
+	}
+}
+
+".header": {
+	backgroundColor: "#EA2035",
+	height: 100,
+	color: "#fff",
+}
+
+".title": {
+	color: "#fff",
+	width: "100%",
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontSize: "20dp"
+	}
+}
+
+".menu_item":{
+	backgroundColor: "#fff",
+	height: '70dp',
+	top: 10,
+	left: 10,
+	right: 10,
+	layout: "horizontal"
+}
+
+".large":{
+	color: "#EA2035",
+	height: "50dp",
+	top: '10dp',
+	left: '10dp',
+	bottom: '10dp',
+	font: {
+		size: "30dp"
+	}
+}
+
+".icon":{
+	top: '10dp',
+	bottom: '10dp',
+	left: '10dp',
+	height: '50dp'
+}

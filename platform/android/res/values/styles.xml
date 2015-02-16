@@ -1,0 +1,11 @@
+<resources>
+    <style name="editText" parent="@android:style/Widget.Holo.Light.EditText">
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColorHint">@color/cursor</item>
+    </style>
+    <style name="Theme.AppCompat.Light" parent="@style/Theme.AppCompat">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:editTextStyle">@style/editText</item>
+    </style>
+</resources>

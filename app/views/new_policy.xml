@@ -1,0 +1,40 @@
+<Alloy>
+	<Window class="container" id="new_policy" fullscreen="true" navBarHidden="true">
+		<View layout="vertical" width="Ti.UI.FILL">
+			<View class="head">
+				<Label class="main_title">New Business Proposal</Label>
+				<View class="btn_back" onClick="nav_back">
+					<ImageView height="20dp" width="auto" left="15dp" right="15dp" top="15dp" image="/images/Left Arrow_white.png"></ImageView>
+				</View>
+			</View>
+			<ScrollView class="main" layout="vertical" contentWidth="Ti.UI.FILL" height="Ti.UI.FILL" width="100%" contentHeight="auto">
+				<View class="body">
+					<View class="main_head">
+						<ImageView height="50dp" width="100dp" left="0" top="0" image="/images/Step1.png"></ImageView>
+						<Label class="main_title" top="16dp" font="fontSize:'14dp'">Fill in details</Label>
+					</View>
+					<View class="content" bottom="20dp" layout="vertical">
+						<Label top="15dp" left="15dp">Category</Label>
+							<!--<Label id="category_text" class="category_text">NB Fresh proposal</Label>-->
+						<Picker id="category" selectionIndicator="true" width="Ti.UI.FILL" onChange="categoryPicked">
+			                <PickerRow title="New Business Submission"/>
+			                <PickerRow title="New Business Requirement"/>
+				        </Picker>
+				        <Label top="15dp" left="15dp">Type</Label>
+				        <Picker id="type" selectionIndicator="true" width="Ti.UI.FILL">
+			                <PickerRow title="New Application"/>
+				        </Picker>
+						<Label top="15dp" left="15dp">Agent Number</Label>
+						<TextField id="agent_id" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" />
+						<Label top="15dp" left="15dp">Agent Name</Label>
+						<TextField id="agent_name" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" />
+						<Label top="15dp" left="15dp">Proposal Number</Label>
+						<TextField id="proposal_no" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699"/>
+					</View>
+				</View>
+				<View left="20dp" right="20dp" width="Ti.UI.FILL" height="20dp" backgroundImage="/images/White_Bottom.png"></View>
+				<View onClick="nav_photo" bottom="20dp" top="40dp" width="100dp" height="100dp" backgroundImage="/images/Next_Button.png"></View>
+			</ScrollView>
+		</View>
+	</Window>
+</Alloy>
