@@ -85,6 +85,20 @@ exports.definition = {
            		db.execute(sql_query, status, id);
            		db.close();
            },
+           resetStatus : function(rid){
+           		var collection = this;
+           		db = Ti.Database.open(collection.config.adapter.db_name);
+           		sql_query = "update "+collection.config.adapter.collection_name+" set status = 0 where rid=?";
+           		db.execute(sql_query, rid);
+           		db.close();
+           },
+           deleteByRid : function(rid){
+           		var collection = this;
+           		db = Ti.Database.open(collection.config.adapter.db_name);
+           		sql_query = "DELETE FROM "+collection.config.adapter.collection_name+" where rid=?";
+           		db.execute(sql_query, rid);
+           		db.close();
+           },
            deleteRow : function(id){
            		var collection = this;
            		db = Ti.Database.open(collection.config.adapter.db_name);

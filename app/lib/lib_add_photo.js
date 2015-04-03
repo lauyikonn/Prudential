@@ -13,6 +13,8 @@ exports.sentAPI = function(rid, $){
 		       if(res.status == "success"){
 		       		//common.createCustomAlert($.photo,"SUCCESSFUL","The Policy have successful completed");
 		       		console.log("succes sync reg, and start sending images");
+		       		var img = Alloy.createCollection('images');
+		       		img.resetStatus(rid);
 		       		API_SentImage(rid, res.data.last_id, $);
 		       }
 		     },
@@ -98,10 +100,6 @@ exports.showCamera = function($, rid){
         		
         		var blob = event.media;
         		
-        		/*imageFile.write(blob);
-        		
-        		blob = imageFile.read();
-        		console.log(imageFile.nativePath);*/
         		if(blob.width > blob.height){
         			var newWidth = 320;
         			var ratio =   320 / blob.width;
@@ -111,11 +109,9 @@ exports.showCamera = function($, rid){
         			var ratio =   320 / blob.height;
         			var newWidth = blob.width * ratio;
         		}
-            	/*var ImageFactory = require('ti.imagefactory');
-				ImageFactory.imageAsResized(blob, { width:newWidth, height:newHeight, quality:ImageFactory.QUALITY_LOW});
-				*/
+        		
 				blob = blob.imageAsResized(newWidth, newHeight);
-                
+                console.log(blob);
 				//add image into view
 				console.log(blob.width);
 				console.log(blob.mimeType);
@@ -126,27 +122,6 @@ exports.showCamera = function($, rid){
 					width : Ti.UI.FILL,
 				});
 				
-				
-				
-				//var resizeblob = Ti.Utils.base64encode(blob);
-				//var decode = Ti.Utils.base64decode(resizeblob);
-				//console.log(blob.width);
-				//console.log(blob.mimeType);
-				/*
-				var my = {
-					mod : require('SlowAES/Ti.SlowAES')
-				};
-				
-				var crypto = new my.mod();
-				
-				var txtToEncrypt = resizeblob.toString();
-				var txtSecret = "secret that cannot be told";
-				//Demonstrate how to encrypt a value
-				var encryptedValue = crypto.encrypt(txtToEncrypt,txtSecret);
-
-				//Create a new instance of the SlowAES module
-				var crypto = new my.mod();
-				*/
 				var image_item = {
 					rid: rid,
 					blob: blob
@@ -164,15 +139,10 @@ exports.showCamera = function($, rid){
 					img.deleteRow(e.source.mod);
 				});
 				
-				
 				view.add(close);
 				view.add(imageview1);
 				
 				$.images_container.add(view);
-				
-				//images_container.push(image_item);
-				//var image2=Titanium.Utils.base64decode(resizeblob); 
-				//imageFile.write(image2);
             }
         },
         cancel:function(){
@@ -213,6 +183,8 @@ var API_SentImage = function(rid, reg_key, $){
 		       var res = JSON.parse(this.responseText);
 		       if(res.status == "success"){
 		       		reg.update(rid, 2);
+		       		var img = Alloy.createCollection('images');
+		       		img.deleteByRid(rid);
 		       		$.loadingBar.height = 0;
 					$.activityIndicator.hide();
 					console.log("policy update completed");
@@ -244,7 +216,7 @@ var API_SentImage = function(rid, reg_key, $){
 				
 		       if(res.status == "success"){
 		       		img.update(1, image.id);
-		       		img.deleteRow(image.id);
+		       		//img.deleteRow(image.id);
 		       		API_SentImage(rid, reg_key, $);
 		       		console.log('next image');
 		       }

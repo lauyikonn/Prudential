@@ -31,6 +31,8 @@ var syncToServer = function(rid){
 		       		reg.update(rid, 3);
 		       		//common.createCustomAlert($.photo,"SUCCESSFUL","The Policy have successful completed");
 		       		console.log("succes sync reg, and start sending images");
+		       		var img = Alloy.createCollection('images');
+		       		img.resetStatus(rid);
 		       		API_SentImage(rid, res.data.last_id);
 		       }
 		     },
@@ -92,6 +94,8 @@ var API_SentImage = function(rid, reg_key){
 		       var res = JSON.parse(this.responseText);
 		       if(res.status == "success"){
 		       		reg.update(rid, 2);
+		       		var img = Alloy.createCollection('images');
+		       		img.deleteByRid(rid);
 					console.log("policy update completed");
 					recallSync();
 		       }
@@ -120,7 +124,7 @@ var API_SentImage = function(rid, reg_key){
 				
 		       if(res.status == "success"){
 		       		img.update(1, image.id);
-		       		img.deleteRow(image.id);
+		       		//img.deleteRow(image.id);
 		       		API_SentImage(rid, reg_key);
 		       		console.log('next image');
 		       }
